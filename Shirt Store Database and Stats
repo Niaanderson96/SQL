@@ -1,0 +1,14 @@
+Create a shirt store database
+
+INSERT INTO store VALUES
+(1, "SHIRT", '$2', 2, "BLUE"),
+(2, "SHIRT", '$2', 3, "GREEN"),
+(3, "SHIRT", '$2', 2, "YELLOW"),
+(4, "SHIRT", '$2', 1, "TURQOISE"),
+(5, "SHIRT", '$3', 5, "WHITE")
+;
+
+Display the database in order by price 
+
+SELECT * FROM STORE;
+ORDER BY price desc;
