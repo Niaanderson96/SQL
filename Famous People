@@ -1,0 +1,46 @@
+/* Movie Stars
+Channing, Jenna Dewan- No, Not married
+Zac Efron, Vanessa: HSM1-3, Dated-Not married
+Tamela Mann, David Mann- Madea Movies/Plays, Yes-Married
+Daniel Craig, Rachel Wiesz- Dreamhouse, Yes-Married
+Brad Pitt, Angelina Jolie- Mr & Mrs Smith, No-Not Married
+
+Singers/Rappers
+Beyonce: Crazy In Love Houston, TX
+Rihanna Fenty: Umbrella, Saint Michael, Barbados
+Nipsey Hussle: Victory Lap, Crenshaw, Los Angeles, CA
+Jay Z: Excuse Me, Brooklyn, NY 
+J Cole: Smile, Frankfurt, Germany
+
+Authors
+'The Babysitter: My Summers With a Serial Killer'-Liza Rodman and Jennifer Jordan
+'Couple Found Slain: After a Family Murder'-Mikita Brottman
+'Fuzz: When Animals Break the Law'-Mary Roach
+'Last Call: A True Story of Love, Lust, and Murder in Queer New York'-Elon Green
+'Confident Women: Swindlers, Grifters, and Shapeshifters of the Feminine Persuasion'-Tori Telfer */
+
+CREATE TABLE movie_stars (id INTEGER PRIMARY KEY, name TEXT, relationship_status TEXT, movie TEXT);
+INSERT INTO movie_stars VALUES (1,'Channing Tatum,Jenna Dewan','not married','Step Up');
+INSERT INTO movie_stars VALUES (2,'Zac Efron,Vanessa Hudgens','Dated','HSM1-3');
+INSERT INTO movie_stars VALUES (3,'Tamela Mann,David Mann','married','Madea Plays/ovies');
+INSERT INTO movie_stars VALUES (4,'Daniel Craig,Rachel Weisz','Married','Dreamhouse');
+INSERT INTO movie_stars VALUES (5,'Brad Pitt,Angelina Jolie','Divorced','Mr & Mrs Smith');
+
+CREATE TABLE singers_rappers (id INTEGER PRIMARY KEY, name TEXT, city_state_country TEXT, song TEXT);
+INSERT INTO singers_rappers VALUES (1,'Beyonce','Houston,TX','Crazy In Love');
+INSERT INTO singers_rappers VALUES (2,'Rihanna','Saint Michael,Barbados','Umbrella');
+INSERT INTO singers_rappers VALUES (3,'Nipsey Hussle','Crenshaw, Los Angeles, CA','Victory Lap');
+INSERT INTO singers_rappers VALUES (4,'Jay Z','Brooklyn, NY','Excuse Me');
+INSERT INTO singers_rappers VALUES (5,'J Cole','Frankfurt,Germany','Smile');
+
+CREATE TABLE authors (id INTEGER PRIMARY KEY, name TEXT, book TEXT);
+INSERT INTO authors VALUES (1,'Liza Rodman,Jennifer Jordan','The Babysitter: My Summers With a Serial Killer');
+INSERT INTO authors VALUES (2, 'Mikita Brottman','Couple Found Slain: After a Family Murder');
+INSERT INTO authors VALUES (3,'Mary Roach','Fuzz: When Animals Break the Law');
+INSERT INTO authors VALUES (4,'Elon Green','Last Call: A True Story of Love, Lust, and Murder in Queer New York');
+INSERT INTO authors VALUES (5,'Tori Telfer','Confident Women: Swindlers, Grifters, and Shapeshifters of the Feminine Persuasion');
+
+SELECT movie_stars.name, authors.id
+FROM movie_stars
+LEFT JOIN authors
+ON movie_stars.name = authors.id;
